@@ -1,1 +1,82 @@
 // 網站首頁設定
+.section{
+  &--header{
+    width: 296px;
+    height: 100vh;
+  }
+  &--main{
+    height: 100vh;
+  }
+}
+
+
+.header{
+  &--nav{
+    a{
+      position: relative;
+      &::before{
+        content: "";
+        position: absolute;
+        left: 0;
+        width: 4px;
+        height: 32px;
+        background-color: $success;
+        display: none;
+      }
+      &:hover{
+        color: $success;
+      }
+      &:hover::before{
+        display: block;
+      }
+    }
+    a.active{
+      color: $success;
+      &::before{
+        display: block;
+      }
+    }
+    
+  }
+  &-account{
+    &-img{
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      overflow: hidden;
+    }
+  }
+}
+
+
+// content
+.content{
+  &--small{
+    font-size: 14px;
+    color: $gray-600;
+  }
+}
+
+
+.pagination{
+  .item-arrow{
+    color: $success;
+  }
+  a{
+    display: inline-block;
+    text-align: center;
+    line-height: 32px;
+    border: 1px solid $success;
+    width: 32px;
+    height: 32px;
+    transition: 0.1s;
+    &:hover{
+      color: $white;
+      background-color: $success;
+    }
+  }
+  a.active{
+    color: $white;
+    background-color: $success;
+  }
+}

@@ -1,0 +1,49 @@
+// bg
+.bg{
+  &-gray{
+    &-100{
+      background-color: $gray-100;
+    }
+  }
+}
+
+
+// font-size
+.fs{
+  &-14{
+    font-size: 14px;
+  }
+}
+
+
+.text{
+  &--center{
+    line-height: 55px;
+  }
+}
+
+// rounded
+.rounded{
+  &-start{
+    &-2{
+      border-radius: 2px 0 0 2px;
+    }
+  }
+  &-end{
+    &-2{
+      border-radius: 0 2px 2px 0;
+    }
+  }
+}
+
+
+// text hover
+.text{
+  &-hover{
+    &-success{
+      &:hover{
+        color: $success;
+      }
+    }
+  }
+}

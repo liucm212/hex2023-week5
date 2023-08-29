@@ -1,19 +1,455 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>index</title>
+    <%- include('./layout/meta') -%>
+    <title>Admin</title>
   </head>
   <body>
-    <%- include('./layout/header'); -%>
+    <div class="container-fluid px-0">
+      <div class="row gx-32">
+        <!-- header section-->
+        <div class="col-auto">
+          <section
+            class="section--header bg-gray-100 d-flex flex-column justify-content-between pt-40 pb-32"
+          >
+            <div>
+              <!-- logo section -->
+              <section class="d-flex px-32 mb-40">
+                <a href="#">
+                  <img
+                    src="https://raw.githubusercontent.com/hexschool/2022-web-layout-training/053bcf3afe88348b79971d2ea8de28f179cba5c5/week5/logo-ANSWER.svg"
+                    alt="綠色菱形狀的logo，中間有一個像手裏劍的形狀。旁邊是文字ANSWER"
+                  />
+                </a>
+              </section>
+              <!-- nav section -->
+              <section>
+                <nav class="header--nav">
+                  <ul>
+                    <li class="mb-28">
+                      <a href="#" class="d-flex align-items-center px-32">
+                        <span class="material-symbols-outlined me-16">
+                          insert_chart
+                        </span>
+                        <span>Dashboard</span>
+                      </a>
+                    </li>
+                    <li class="mb-28">
+                      <a href="#" class="d-flex align-items-center px-32">
+                        <span class="material-symbols-outlined me-16">
+                          forum
+                        </span>
+                        <span>Question</span>
+                      </a>
+                    </li>
+                    <li class="mb-28">
+                      <a
+                        href="#"
+                        class="d-flex align-items-center px-32 active"
+                      >
+                        <span class="material-symbols-outlined me-16">
+                          assignment
+                        </span>
+                        <span>Assignment</span>
+                      </a>
+                    </li>
+                    <li class="mb-28">
+                      <a href="#" class="d-flex align-items-center px-32">
+                        <span class="material-symbols-outlined me-16">
+                          video_library
+                        </span>
+                        <span>Course</span>
+                      </a>
+                    </li>
+                    <li class="mb-28">
+                      <a href="#" class="d-flex align-items-center px-32">
+                        <span class="material-symbols-outlined me-16">
+                          group
+                        </span>
+                        <span>Admin</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#" class="d-flex align-items-center px-32">
+                        <span class="material-symbols-outlined me-16">
+                          settings
+                        </span>
+                        <span>Settings</span>
+                      </a>
+                    </li>
+                  </ul>
+                </nav>
+              </section>
+            </div>
 
-    <h1 class="index-title">我是首頁</h1>
+            <!-- account section -->
+            <section>
+              <a href="#">
+                <div class="d-flex align-items-center px-32">
+                  <div class="header-account-img me-16">
+                    <img
+                      width="40"
+                      height="40"
+                      src="https://github.com/hexschool/2022-web-layout-training/blob/main/week5/andychen.jpeg?raw=true"
+                      alt="一個頭髮、戴眼鏡、留落塞鬍、看著右方的男人。"
+                    />
+                  </div>
+                  <div class="d-flex flex-column">
+                    <span class="mb-4">Andy Chen</span>
+                    <span class="content--small">andy0401@gmail.com</span>
+                  </div>
+                </div>
+              </a>
+            </section>
+          </section>
+        </div>
 
-    <button class="btn btn-primary">Bootstrap Button</button>
-
-    <%- include('./layout/footer'); -%>
+        <!-- main section -->
+        <div class="col">
+          <main
+            class="section--main d-flex flex-column justify-content-between pe-32 py-32"
+          >
+            <div>
+              <!-- intro info -->
+              <div class="row justify-content-between mb-48">
+                <!-- admin + Add New Admin -->
+                <div class="col-auto d-flex align-items-center">
+                  <h1 class="fs-4 me-48">Admin</h1>
+                  <a
+                    href="#"
+                    class="d-flex align-items-center text-hover-success"
+                  >
+                    <span
+                      class="material-symbols-outlined me-8 class text-success"
+                    >
+                      add
+                    </span>
+                    <span>Add New Admin</span>
+                  </a>
+                </div>
+                <!-- search icon + bell icon -->
+                <div class="col-auto">
+                  <a href="#" class="me-24 text-hover-success"
+                    ><span class="material-symbols-outlined"> search </span></a
+                  >
+                  <a href="#" class="text-hover-success"
+                    ><span class="material-symbols-outlined">
+                      notifications_active
+                    </span></a
+                  >
+                </div>
+              </div>
+              <!-- data table -->
+              <table class="table table-hover text-start">
+                <thead class="border-bottom border-dark">
+                  <tr>
+                    <th class="col-1 pt-0 pb-4 px-0" scope="col">
+                      <div class="d-flex align-items-center">
+                        <span class="me-8 fw-bold">ID</span>
+                        <span class="material-symbols-outlined text-success">
+                          arrow_downward</span
+                        >
+                      </div>
+                    </th>
+                    <th
+                      class="col-3 pt-0 pb-4 px-0 align-center fw-bold"
+                      scope="col"
+                    >
+                      Name
+                    </th>
+                    <th class="col-4 pt-0 pb-4 px-0 fw-bold" scope="col">
+                      Email
+                    </th>
+                    <th class="col-2 pt-0 pb-4 px-0 fw-bold" scope="col">
+                      Verified
+                    </th>
+                    <th class="col-2 pt-0 pb-4 px-0" scope="col"></th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#1</th>
+                    <td class="col-3 text--center p-0">Emir Wicks</td>
+                    <td class="col-4 text--center p-0">emir.wicks@mail.com</td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#2</th>
+                    <td class="col-3 text--center p-0">Zaina Goldsmith</td>
+                    <td class="col-4 text--center p-0">
+                      zaina.goldsmith@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#3</th>
+                    <td class="col-3 text--center p-0">Mahima Lopez</td>
+                    <td class="col-4 text--center p-0">
+                      mahima.lopez@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#4</th>
+                    <td class="col-3 text--center p-0">Pharrell Murray</td>
+                    <td class="col-4 text--center p-0">
+                      pharrell.murray@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#5</th>
+                    <td class="col-3 text--center p-0">Annika Mcbride</td>
+                    <td class="col-4 text--center p-0">
+                      annika.mcbride@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#6</th>
+                    <td class="col-3 text--center p-0">Fatimah Clark</td>
+                    <td class="col-4 text--center p-0">
+                      fatimah.clark@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#7</th>
+                    <td class="col-3 text--center p-0">Klaudia Rhodes</td>
+                    <td class="col-4 text--center p-0">
+                      klaudia.rhodes@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#8</th>
+                    <td class="col-3 text--center p-0">Tillie Lucero</td>
+                    <td class="col-4 text--center p-0">
+                      tillie.lucero@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#9</th>
+                    <td class="col-3 text--center p-0">Sabrina Stephenson</td>
+                    <td class="col-4 text--center p-0">
+                      sabrina.stephenson@mail.com
+                    </td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th class="col-1 text--center p-0" scope="row">#10</th>
+                    <td class="col-3 text--center p-0">Annie Smith</td>
+                    <td class="col-4 text--center p-0">annie.smith@mail.com</td>
+                    <td class="col-2 text--center p-0">Yes</td>
+                    <td class="col-2 p-0">
+                      <div
+                        class="d-flex align-items-center justify-content-end"
+                      >
+                        <!-- eye icon + edit icon -->
+                        <a href="#" class="me-24 text-hover-success">
+                          <span class="material-symbols-outlined">
+                            visibility
+                          </span>
+                        </a>
+                        <a href="#" class="text-hover-success"
+                          ><span class="material-symbols-outlined">
+                            edit
+                          </span></a
+                        >
+                      </div>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <!-- pagination -->
+            <div class="d-flex justify-content-end">
+              <div class="pagination">
+                <ul class="d-flex align-items-center">
+                  <li class="d-flex align-items-center">
+                    <a
+                      href="#"
+                      class="d-flex align-items-center justify-content-center rounded-start-2 item-arrow"
+                    >
+                      <span class="material-symbols-outlined">
+                        chevron_left
+                      </span>
+                    </a>
+                  </li>
+                  <li><a class="active" href="#">1</a></li>
+                  <li><a href="#">2</a></li>
+                  <li><a href="#">3</a></li>
+                  <li>
+                    <a
+                      href="#"
+                      class="d-flex align-items-center justify-content-center rounded-end-2 item-arrow"
+                    >
+                      <span class="material-symbols-outlined">
+                        chevron_right
+                      </span>
+                    </a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </main>
+        </div>
+      </div>
+    </div>
 
     <script type="module" src="../main.js"></script>
   </body>

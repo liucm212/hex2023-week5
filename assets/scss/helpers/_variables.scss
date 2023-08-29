@@ -368,7 +368,7 @@ $escaped-characters: (
 // Quickly modify global styling by enabling or disabling optional features.
 
 $enable-caret:                true !default;
-$enable-rounded:              true !default;
+$enable-rounded:              false !default;
 $enable-shadows:              false !default;
 $enable-gradients:            false !default;
 $enable-transitions:          true !default;
@@ -407,14 +407,22 @@ $gradient: linear-gradient(180deg, rgba($white, .15), rgba($white, 0)) !default;
 // You can add more entries to the $spacers map, should you need more variation.
 
 // scss-docs-start spacer-variables-maps
-$spacer: 1rem !default;
+$spacer: 0.625rem !default;
 $spacers: (
   0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
+  4: $spacer  * 0.4,
+  8: $spacer  * 0.8,
+  10: $spacer * 1.0,
+  12: $spacer * 1.2,
+  16: $spacer * 1.6, 
+  18: $spacer * 1.8,
+  20: $spacer * 2.0,
+  24: $spacer * 2.4,
+  28: $spacer * 2.8,
+  32: $spacer * 3.2,
+  36: $spacer * 3.6,
+  40: $spacer * 4.0,
+  48: $spacer * 4.8,
 ) !default;
 // scss-docs-end spacer-variables-maps
 
