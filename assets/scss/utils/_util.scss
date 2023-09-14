@@ -47,3 +47,17 @@
     }
   }
 }
+
+// table
+.table{
+  tbody{
+    tr{
+      border-bottom: 1px solid #aaa;
+    }
+    tr>*{
+      vertical-align: middle;
+      line-height: normal;
+      padding: 20px 0;
+    }
+  }
+}
